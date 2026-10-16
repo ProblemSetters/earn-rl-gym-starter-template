@@ -1,0 +1,12 @@
+diff --git a/internal/command/handler.go b/internal/command/handler.go
+--- a/internal/command/handler.go
++++ b/internal/command/handler.go
+@@ -20,7 +20,7 @@ func (h *Handler) Execute(args []string) []byte {
+ 		if len(args) != 1 {
+ 			return arityError("ping")
+ 		}
+-		return resp.SimpleString("PONG")
++		return resp.SimpleString("OK")
+ 	case "SET":
+ 		if len(args) != 3 {
+ 			return arityError("set")

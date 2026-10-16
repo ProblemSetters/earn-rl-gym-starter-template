@@ -1,0 +1,36 @@
+schema_version = "1"
+
+[metadata]
+id        = "taskboard"
+version   = 1
+title     = "Implement task deletion in Taskboard"
+profile   = "brownfield"
+category  = "bugfix_and_feature"
+languages = ["javascript", "sql", "html", "css"]
+
+[task]
+timeout_sec = 1800
+env         = []
+
+[task.environment]
+dockerfile = "environment/Dockerfile"
+workdir    = "/work/candidate"
+network    = "gateway-only"
+cpus       = 2
+memory     = "4g"
+
+[commands]
+verify = "python3 verifier/tests/run_tests.py"
+
+[verifier]
+type          = "browser"
+timeout_sec   = 300
+network       = "none"
+deterministic = true
+
+[verifier.environment]
+dockerfile = "environment/Dockerfile"
+cpus       = 2
+memory     = "2g"
+shm_size   = "1g"
+

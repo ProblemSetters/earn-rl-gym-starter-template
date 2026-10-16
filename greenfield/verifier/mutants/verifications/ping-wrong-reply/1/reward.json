@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "task": "goredis",
+  "task_version": 3,
+  "score": 85,
+  "max_score": 100,
+  "tests": [
+    {
+      "id": "starts",
+      "title": "config.toml sets the project up and the server starts listening on port 6379",
+      "score": 10,
+      "max_score": 10,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "ping",
+      "title": "PING returns the RESP simple string PONG",
+      "score": 0,
+      "max_score": 15,
+      "status": "failed",
+      "type": "deterministic"
+    },
+    {
+      "id": "set-get",
+      "title": "SET stores and GET returns a bulk string",
+      "score": 15,
+      "max_score": 15,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "overwrite",
+      "title": "SET replaces an existing value",
+      "score": 10,
+      "max_score": 10,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "empty-value",
+      "title": "GET returns an empty stored value as an empty bulk string",
+      "score": 5,
+      "max_score": 5,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "missing-get",
+      "title": "GET of a missing key returns a null bulk string",
+      "score": 10,
+      "max_score": 10,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "del",
+      "title": "DEL counts existing distinct keys and removes them",
+      "score": 20,
+      "max_score": 20,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "arity-errors",
+      "title": "invalid command arity returns an ERR and keeps the connection usable",
+      "score": 10,
+      "max_score": 10,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "multiple-clients",
+      "title": "the server serves separate client connections",
+      "score": 5,
+      "max_score": 5,
+      "status": "passed",
+      "type": "deterministic"
+    }
+  ]
+}

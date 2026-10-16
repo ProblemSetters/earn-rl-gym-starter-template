@@ -1,0 +1,23 @@
+# Python verifier output
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Node
+node_modules/
+dist/
+npm-debug.log*
+
+# Task build outputs and local data (the tasks' own sources and .env files are committed)
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+greenfield/reference-solution/goredis
+*.log
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/

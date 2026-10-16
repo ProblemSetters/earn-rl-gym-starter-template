@@ -1,0 +1,35 @@
+schema_version = "1"
+
+[metadata]
+id        = "goredis"
+version   = 3
+title     = "Build a small data store in Go"
+profile   = "greenfield"
+category  = "new_project"
+languages = ["go"]
+
+[task]
+timeout_sec = 1800
+env         = []
+
+[task.environment]
+dockerfile = "environment/Dockerfile"
+workdir    = "/work/candidate"
+network    = "gateway-only"
+cpus       = 2
+memory     = "2g"
+
+[commands]
+verify = "python3 verifier/tests/run_tests.py"
+
+[verifier]
+type          = "tests"
+timeout_sec   = 300
+network       = "none"
+deterministic = true
+
+[verifier.environment]
+dockerfile = "environment/Dockerfile"
+cpus       = 2
+memory     = "1g"
+

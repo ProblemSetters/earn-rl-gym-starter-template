@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "task": "taskboard",
+  "task_version": 1,
+  "score": 40,
+  "max_score": 100,
+  "tests": [
+    {
+      "id": "api-delete-existing",
+      "title": "DELETE of an existing task answers 200 {deleted: true} and removes it",
+      "max_score": 15,
+      "type": "deterministic",
+      "score": 15,
+      "status": "passed"
+    },
+    {
+      "id": "api-delete-missing-404",
+      "title": "DELETE of a task that does not exist, or twice, answers 404",
+      "max_score": 10,
+      "type": "deterministic",
+      "score": 10,
+      "status": "passed"
+    },
+    {
+      "id": "delete-button-removes-item",
+      "title": "Delete removes the selected task from the list",
+      "max_score": 15,
+      "type": "deterministic",
+      "score": 15,
+      "status": "passed"
+    },
+    {
+      "id": "delete-removes-sqlite-row",
+      "title": "the selected task is deleted from SQLite",
+      "max_score": 20,
+      "type": "deterministic",
+      "score": 0,
+      "status": "failed"
+    },
+    {
+      "id": "delete-removes-only-that-item",
+      "title": "deleting one task removes only that task and leaves the other intact",
+      "max_score": 10,
+      "type": "deterministic",
+      "score": 0,
+      "status": "failed"
+    },
+    {
+      "id": "delete-persists-after-reload",
+      "title": "a deleted task stays gone after the page is reloaded",
+      "max_score": 15,
+      "type": "deterministic",
+      "score": 0,
+      "status": "failed"
+    },
+    {
+      "id": "delete-failure-keeps-item",
+      "title": "when the DELETE request fails the task stays and an error is shown",
+      "max_score": 15,
+      "type": "deterministic",
+      "score": 0,
+      "status": "failed"
+    }
+  ],
+  "hidden-tests": [
+    {
+      "id": "api-lists-todos",
+      "title": "GET /api/todos lists the seeded tasks in id order",
+      "max_score": 0,
+      "score": 0,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "api-gets-one-todo",
+      "title": "GET /api/todos/:id returns one task, or 404",
+      "max_score": 0,
+      "score": 0,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "api-creates-todo",
+      "title": "POST /api/todos creates a trimmed task and answers 201 with a Location",
+      "max_score": 0,
+      "score": 0,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "api-rejects-invalid-input",
+      "title": "POST with a blank title, or a malformed id, answers 400",
+      "max_score": 0,
+      "score": 0,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "api-updates-todo",
+      "title": "PATCH /api/todos/:id renames a task, or answers 404",
+      "max_score": 0,
+      "score": 0,
+      "status": "passed",
+      "type": "deterministic"
+    },
+    {
+      "id": "ui-lists-and-adds-tasks",
+      "title": "the UI lists the tasks and adds a new one",
+      "max_score": 0,
+      "score": 0,
+      "status": "passed",
+      "type": "deterministic"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+diff --git a/internal/command/handler.go b/internal/command/handler.go
+--- a/internal/command/handler.go
++++ b/internal/command/handler.go
+@@ -36,6 +36,9 @@ func (h *Handler) Execute(args []string) []byte {
+ 		if !ok {
+ 			return resp.NullBulkString()
+ 		}
++		if value == "" {
++			return resp.NullBulkString()
++		}
+ 		return resp.BulkString(value)
+ 	case "DEL":
+ 		if len(args) < 2 {

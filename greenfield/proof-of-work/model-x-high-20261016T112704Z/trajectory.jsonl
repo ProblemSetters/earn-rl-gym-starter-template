@@ -1,0 +1,3 @@
+{"type":"fixture_derivation","timestamp":"2026-10-16T11:27:04Z","model":"model-x","reasoning":"high","synthetic":true,"source_run":"gemini-3.7-flash-high-20261016T025723Z"}
+{"type":"code_edit","timestamp":"2026-10-16T11:27:04Z","path":"main.go","summary":"PING replies OK; SET keeps the first value; empty GET returns null; DEL reports zero","synthetic":true}
+{"type":"verification_result","timestamp":"2026-10-16T11:34:49Z","execution":"measured","score":50,"max_score":100,"failed_check_ids":["ping","overwrite","empty-value","del"],"failed_scored_checks":4,"total_scored_checks":9}

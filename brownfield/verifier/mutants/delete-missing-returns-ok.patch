@@ -1,0 +1,12 @@
+diff --git a/backend/src/controllers/todoController.js b/backend/src/controllers/todoController.js
+--- a/backend/src/controllers/todoController.js
++++ b/backend/src/controllers/todoController.js
+@@ -22,7 +22,7 @@ function createTodoController(db) {
+     delete(req, res) {
+       const deleted = todoService.deleteTodo(db, req.todoId);
+       if (deleted === null) return res.status(501).json({ error: 'Task deletion is not implemented' });
+-      if (!deleted) return res.status(404).json({ error: 'Task not found' });
++      if (!deleted) return res.json({ deleted: false });
+       res.json({ deleted: true });
+     },
+   };

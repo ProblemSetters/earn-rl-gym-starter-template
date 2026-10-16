@@ -1,0 +1,4 @@
+{"type":"fixture_derivation","timestamp":"2026-10-16T11:27:04Z","model":"model-x","reasoning":"high","synthetic":true,"source_run":"gemini-3.7-flash-high-20261016T025936Z"}
+{"type":"code_edit","timestamp":"2026-10-16T11:27:04Z","path":"backend/src/controllers/todoController.js","summary":"DELETE reports an unsuccessful body and treats a missing task as success","synthetic":true}
+{"type":"code_edit","timestamp":"2026-10-16T11:27:04Z","path":"frontend/src/hooks/useTodos.js","summary":"The delete flow swallows request failures and removes the item locally","synthetic":true}
+{"type":"verification_result","timestamp":"2026-10-16T11:34:49Z","execution":"measured","score":60,"max_score":100,"failed_check_ids":["api-delete-existing","api-delete-missing-404","delete-failure-keeps-item"],"failed_scored_checks":3,"total_scored_checks":7}

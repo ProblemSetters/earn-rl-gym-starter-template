@@ -1,0 +1,24 @@
+schema_version: 1
+task: goredis
+max_score: 100
+reference_min_score: 100
+baseline_max_score: 0
+checks:
+  - id: starts
+    points: 10
+  - id: ping
+    points: 15
+  - id: set-get
+    points: 15
+  - id: overwrite
+    points: 10
+  - id: empty-value
+    points: 5
+  - id: missing-get
+    points: 10
+  - id: del
+    points: 20
+  - id: arity-errors
+    points: 10
+  - id: multiple-clients
+    points: 5

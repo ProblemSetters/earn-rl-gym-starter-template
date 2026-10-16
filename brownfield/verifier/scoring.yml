@@ -1,0 +1,33 @@
+schema_version: 1
+task: taskboard
+max_score: 100
+reference_min_score: 100
+baseline_max_score: 0
+hidden_checks:
+  - id: api-lists-todos
+    points: 0
+  - id: api-gets-one-todo
+    points: 0
+  - id: api-creates-todo
+    points: 0
+  - id: api-rejects-invalid-input
+    points: 0
+  - id: api-updates-todo
+    points: 0
+  - id: ui-lists-and-adds-tasks
+    points: 0
+checks:
+  - id: api-delete-existing
+    points: 15
+  - id: api-delete-missing-404
+    points: 10
+  - id: delete-button-removes-item
+    points: 15
+  - id: delete-removes-sqlite-row
+    points: 20
+  - id: delete-removes-only-that-item
+    points: 10
+  - id: delete-persists-after-reload
+    points: 15
+  - id: delete-failure-keeps-item
+    points: 15

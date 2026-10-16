@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "task": "goredis",
+  "task_version": 3,
+  "model": "model-x",
+  "reasoning": "high",
+  "created_at": "2026-10-16T11:27:04Z",
+  "synthetic": true,
+  "source_run": "gemini-3.7-flash-high-20261016T025723Z",
+  "source_model": "openai/gemini-3.7-flash",
+  "source_task_version": 2,
+  "verification_status": "measured",
+  "verified_at": "2026-10-16T11:34:49Z",
+  "verifier_image": "earn-goredis-task:latest"
+}

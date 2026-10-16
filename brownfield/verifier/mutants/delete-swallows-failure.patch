@@ -1,0 +1,12 @@
+diff --git a/frontend/src/hooks/useTodos.js b/frontend/src/hooks/useTodos.js
+--- a/frontend/src/hooks/useTodos.js
++++ b/frontend/src/hooks/useTodos.js
+@@ -42,7 +42,7 @@ export function useTodos() {
+   });
+ 
+   const deleteTodo = (id) => save(async () => {
+-    await removeTodo(id);
++    try { await removeTodo(id); } catch { return; }
+     setTodos((current) => current.filter((todo) => todo.id !== id));
+   });
+ 

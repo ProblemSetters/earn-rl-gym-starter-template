@@ -1,0 +1,13 @@
+diff --git a/internal/store/store.go b/internal/store/store.go
+--- a/internal/store/store.go
++++ b/internal/store/store.go
+@@ -14,6 +14,8 @@ func (s *Store) Set(key, value string) {
+ 	s.mu.Lock()
+ 	defer s.mu.Unlock()
+-	s.values[key] = value
++	if _, exists := s.values[key]; !exists {
++		s.values[key] = value
++	}
+ }
+ 
+ func (s *Store) Get(key string) (string, bool) {

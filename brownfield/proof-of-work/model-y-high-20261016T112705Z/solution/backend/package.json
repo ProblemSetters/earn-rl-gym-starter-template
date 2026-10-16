@@ -1,0 +1,13 @@
+{
+  "name": "@taskboard/backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node --experimental-sqlite src/server.js",
+    "dev": "node --experimental-sqlite --watch src/server.js",
+    "test": "node --experimental-sqlite --test test/*.test.cjs"
+  },
+  "dependencies": {
+    "express": "5.3.0"
+  }
+}

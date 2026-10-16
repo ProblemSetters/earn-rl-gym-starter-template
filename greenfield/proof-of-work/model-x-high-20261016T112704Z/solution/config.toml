@@ -1,0 +1,11 @@
+schema_version = "1"
+
+[setup]
+commands = [
+    ["go", "build", "-o", "goredis", "."]
+]
+
+[run]
+command = "./goredis"
+ports = [6379]
+
